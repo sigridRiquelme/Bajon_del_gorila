@@ -1,0 +1,234 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f3ee;
+    color: #111;
+}
+
+
+/* ========================================
+   CONTENEDOR GENERAL
+======================================== */
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   MENÚ LATERAL
+======================================== */
+
+.sidebar {
+    width: 255px;
+    height: 100vh;
+
+    background-color: #171717;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo-admin {
+    padding: 25px;
+}
+
+.logo-admin img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+
+/* ========================================
+   PANEL DE ADMIN
+======================================== */
+
+.admin-label {
+    margin: 0 23px 25px 23px;
+    padding: 8px 12px;
+
+    background-color: #292929;
+    color: #ffc400;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    width: fit-content;
+
+    border-radius: 6px;
+}
+
+
+/* ========================================
+   MENÚ DE NAVEGACIÓN
+======================================== */
+
+.menu-admin {
+    display: flex;
+    flex-direction: column;
+
+    border-top: 1px solid #2c2c2c;
+}
+
+.menu-admin a {
+    color: #cfcfcf;
+    text-decoration: none;
+
+    padding: 20px 25px;
+
+    font-size: 16px;
+
+    border-left: 3px solid transparent;
+}
+
+.menu-admin a:hover {
+    background-color: #242424;
+    color: white;
+}
+
+.menu-admin a.active {
+    background-color: #302016;
+    color: #ff6500;
+
+    border-left: 3px solid #ff6500;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   INFORMACIÓN DEL ADMINISTRADOR
+======================================== */
+
+.admin-info {
+    margin-top: auto;
+
+    padding: 22px;
+
+    border-top: 1px solid #2c2c2c;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.admin-info strong {
+    font-size: 14px;
+}
+
+.admin-info span {
+    color: #969696;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ========================================
+   BOTÓN VOLVER AL SITIO
+======================================== */
+
+.volver-sitio {
+    text-decoration: none;
+
+    color: #aaa;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 7px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.volver-sitio:hover {
+    color: white;
+    border-color: #666;
+}
+
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.contenido-admin {
+    margin-left: 255px;
+
+    width: calc(100% - 255px);
+
+    padding: 50px 45px;
+}
+
+
+/* ========================================
+   ENCABEZADO PRODUCTOS
+======================================== */
+
+.encabezado-productos {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado-productos h1 {
+    font-size: 38px;
+}
+
+.encabezado-productos p {
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   BOTÓN AGREGAR PRODUCTO
+======================================== */
+
+.btn-agregar {
+    background-color: #ff6500;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 16px 22px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background-color: #e95c00;
+}
