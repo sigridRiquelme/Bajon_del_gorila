@@ -14,7 +14,30 @@ body {
     color: #111;
 }
 
+/* ========================================
+   RESPONSIVE
+======================================== */
 
+@media (max-width: 1000px) {
+
+    .contenido-admin {
+        padding: 35px 25px;
+    }
+
+    .encabezado-productos {
+        gap: 20px;
+    }
+
+    .filtros-productos {
+        flex-wrap: wrap;
+    }
+
+    .filtros-productos input,
+    .filtros-productos select {
+        flex: 1;
+        min-width: 200px;
+    }
+}
 /* ========================================
    CONTENEDOR GENERAL
 ======================================== */
@@ -313,12 +336,12 @@ body {
 
     border-radius: 14px;
 
-    overflow: hidden;
+    overflow: auto;
 }
 
 .tabla-productos table {
     width: 100%;
-
+    min-width: 950px;
     border-collapse: collapse;
 }
 
@@ -338,4 +361,141 @@ body {
     font-weight: bold;
 
     text-align: left;
+}
+
+/* ========================================
+   FILAS DE PRODUCTOS
+======================================== */
+
+.tabla-productos td {
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+
+/* IMAGEN */
+
+.imagen-producto {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+/* PRECIO */
+
+.precio {
+    color: #ff6500;
+
+    font-weight: bold;
+}
+
+
+/* STOCK */
+
+.stock-disponible {
+    color: #236b2c;
+
+    font-weight: bold;
+}
+
+.unidad-stock {
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* ESTADO */
+
+.estado-producto {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.estado-producto.disponible {
+    color: #236b2c;
+
+    background-color: #edf4ec;
+
+    border: 1px solid #5e895f;
+}
+
+
+/* ACCIONES */
+
+.acciones {
+    white-space: nowrap;
+}
+
+.btn-editar,
+.btn-eliminar {
+    padding: 9px 13px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* EDITAR */
+
+.btn-editar {
+    background-color: #171717;
+    color: white;
+
+    border: none;
+
+    margin-right: 6px;
+}
+
+
+/* ELIMINAR */
+
+.btn-eliminar {
+    background-color: #fff3f3;
+    color: #e32626;
+
+    border: 1px solid #f0b8b8;
+}
+
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .contenido-admin {
+        padding: 35px 25px;
+    }
+
+    .encabezado-productos {
+        gap: 20px;
+    }
+
+    .filtros-productos {
+        flex-wrap: wrap;
+    }
+
+    .filtros-productos input,
+    .filtros-productos select {
+        flex: 1;
+        min-width: 200px;
+    }
 }
