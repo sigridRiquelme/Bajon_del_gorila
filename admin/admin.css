@@ -227,8 +227,115 @@ body {
     font-weight: bold;
 
     cursor: pointer;
+
+    white-space: nowrap;
 }
 
 .btn-agregar:hover {
     background-color: #e95c00;
+}
+
+
+/* ========================================
+   FILTROS DE PRODUCTOS
+======================================== */
+
+.filtros-productos {
+    margin-top: 30px;
+
+    background-color: white;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* BUSCADOR */
+
+.filtros-productos input {
+    width: 270px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dedbd5;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+/* CUANDO HACEMOS CLICK EN EL BUSCADOR */
+
+.filtros-productos input:focus {
+    border-color: #ff6500;
+}
+
+
+/* SELECT DE CATEGORÍAS */
+
+.filtros-productos select {
+    width: 220px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dedbd5;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+/* ========================================
+   TABLA DE PRODUCTOS
+======================================== */
+
+.tabla-productos {
+    margin-top: 18px;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.tabla-productos table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+/* CABECERA */
+
+.tabla-productos thead {
+    background-color: #171717;
+}
+
+.tabla-productos th {
+    padding: 17px 18px;
+
+    color: #ffc400;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-align: left;
 }
