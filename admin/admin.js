@@ -90,11 +90,10 @@ function mostrarProductos(lista = productos) {
 
                 <td class="acciones">
 
-                    <button class="btn-editar">
-                        EDITAR
-                    </button>
-
-                    <button class="btn-eliminar">
+                    <button
+                        class="btn-eliminar"
+                        onclick="eliminarProducto(${producto.id})"
+                    >
                         ELIMINAR
                     </button>
 
@@ -109,6 +108,25 @@ function mostrarProductos(lista = productos) {
         `${lista.length} de ${productos.length} productos`;
 }
 
+function eliminarProducto(id) {
+
+    const confirmar = confirm(
+        "¿Seguro que deseas eliminar este producto?"
+    );
+
+    if (!confirmar) {
+        return;
+    }
+
+    const posicion = productos.findIndex(function(producto) {
+        return producto.id === id;
+    });
+
+    if (posicion !== -1) {
+        productos.splice(posicion, 1);
+        mostrarProductos();
+    }
+}
 
 mostrarProductos();
 
