@@ -70,7 +70,9 @@ function mostrarProductos(lista = productos) {
                 </td>
 
                 <td>
-                    <select class="estado-producto">
+                    <select class="estado-producto"
+                    onchange="cambiarEstado(${producto.id}, this.value)"
+                    >
                         <option value="Disponible"
                             ${producto.estado === "Disponible" ? "selected" : ""}>
                             Disponible
@@ -128,6 +130,17 @@ function eliminarProducto(id) {
     }
 }
 
+function cambiarEstado(id, nuevoEstado) {
+
+    const producto = productos.find(function(producto) {
+        return producto.id === id;
+    });
+
+    if (producto) {
+        producto.estado = nuevoEstado;
+    }
+}
+
 mostrarProductos();
 
 btnAgregarProducto.addEventListener("click", function() {
@@ -154,6 +167,7 @@ formProducto.addEventListener("submit", function(event) {
 
     const archivoImagen = imagenProducto.files[0];
 
+    let rutaImagen = "";
 
     if (archivoImagen) {
         rutaImagen = URL.createObjectURL(archivoImagen);
