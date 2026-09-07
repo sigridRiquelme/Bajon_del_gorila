@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito | El Bajón del Gorila</title>
+
+    <link rel="stylesheet" href="carrito.css">
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header-carrito">
+
+        <div class="logo-carrito">
+
+            <img
+                src="../img/logo-bajon.png"
+                alt="El Bajón del Gorila"
+            >
+
+        </div>
+
+
+        <a href="#" class="volver-menu">
+            ← Seguir comprando
+        </a>
+
+    </header>
+
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-carrito">
+
+        <section class="carrito-productos">
+
+            <div class="titulo-carrito">
+
+                <h1>TU CARRITO</h1>
+
+                <p id="contadorCarrito">
+                    0 productos
+                </p>
+
+            </div>
+
+
+            <div id="listaCarrito">
+
+                <!-- Los productos se cargarán con JavaScript -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RESUMEN -->
+        <aside class="resumen-pedido">
+
+            <h2>RESUMEN DEL PEDIDO</h2>
+
+
+            <div class="fila-resumen">
+
+                <span>Subtotal</span>
+
+                <strong id="subtotal">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="fila-resumen">
+
+                <span>Delivery</span>
+
+                <strong id="delivery">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="total-pedido">
+
+                <span>TOTAL</span>
+
+                <strong id="totalPedido">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <button
+                class="btn-confirmar"
+                id="btnConfirmarPedido"
+            >
+                CONFIRMAR PEDIDO
+            </button>
+
+        </aside>
+
+    </main>
+
+
+    <script src="carrito.js"></script>
+
+</body>
+
+</html>
