@@ -12,7 +12,20 @@ const productos = [
 
 const listaProductos = document.getElementById("listaProductos");
 const contadorProductos = document.getElementById("contadorProductos");
+const modalProducto = document.getElementById("modalProducto");
+const btnAgregarProducto = document.getElementById("btnAgregarProducto");
+const cerrarModal = document.getElementById("cerrarModal");
+const cancelarModal = document.getElementById("cancelarModal");
 
+const formProducto = document.getElementById("formProducto");
+
+const nombreProducto = document.getElementById("nombreProducto");
+const descripcionProducto = document.getElementById("descripcionProducto");
+const precioProducto = document.getElementById("precioProducto");
+const stockProducto = document.getElementById("stockProducto");
+const categoriaProducto = document.getElementById("categoriaProducto");
+const estadoProducto = document.getElementById("estadoProducto");
+const imagenProducto = document.getElementById("imagenProducto");
 
 function mostrarProductos() {
 
@@ -54,10 +67,21 @@ function mostrarProductos() {
                 </td>
 
                 <td>
-                    <select class="estado-producto disponible">
-                        <option>Disponible</option>
-                        <option>Sin stock</option>
-                        <option>Oculto</option>
+                    <select class="estado-producto">
+                        <option value="Disponible"
+                            ${producto.estado === "Disponible" ? "selected" : ""}>
+                            Disponible
+                        </option>
+
+                        <option value="Sin stock"
+                            ${producto.estado === "Sin stock" ? "selected" : ""}>
+                            Sin stock
+                        </option>
+
+                        <option value="Oculto"
+                            ${producto.estado === "Oculto" ? "selected" : ""}>
+                            Oculto
+                        </option>
                     </select>
                 </td>
 
@@ -84,3 +108,47 @@ function mostrarProductos() {
 
 
 mostrarProductos();
+
+btnAgregarProducto.addEventListener("click", function() {
+    modalProducto.classList.add("activo");
+});
+
+cerrarModal.addEventListener("click", function() {
+    modalProducto.classList.remove("activo");
+});
+
+cancelarModal.addEventListener("click", function() {
+    modalProducto.classList.remove("activo");
+});
+
+formProducto.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const archivoImagen = imagenProducto.files[0];
+
+    let rutaImagen = "../img/gorila-burger.png";
+
+    if (archivoImagen) {
+        rutaImagen = URL.createObjectURL(archivoImagen);
+    }
+
+    const nuevoProducto = {
+        id: Date.now(),
+        nombre: nombreProducto.value,
+        descripcion: descripcionProducto.value,
+        categoria: categoriaProducto.value,
+        precio: Number(precioProducto.value),
+        stock: Number(stockProducto.value),
+        estado: estadoProducto.value,
+        imagen: rutaImagen
+    };
+
+    productos.push(nuevoProducto);
+
+    mostrarProductos();
+
+    modalProducto.classList.remove("activo");
+
+    formProducto.reset();
+});
