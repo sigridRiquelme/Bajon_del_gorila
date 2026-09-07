@@ -27,11 +27,14 @@ const categoriaProducto = document.getElementById("categoriaProducto");
 const estadoProducto = document.getElementById("estadoProducto");
 const imagenProducto = document.getElementById("imagenProducto");
 
-function mostrarProductos() {
+const buscarProducto = document.getElementById("buscarProducto");
+const filtroCategoria = document.getElementById("filtroCategoria");
+
+function mostrarProductos(lista = productos) {
 
     listaProductos.innerHTML = "";
 
-    productos.forEach(function(producto) {
+    lista.forEach(function(producto) {
 
         listaProductos.innerHTML += `
             <tr>
@@ -103,7 +106,7 @@ function mostrarProductos() {
     });
 
     contadorProductos.textContent =
-        `${productos.length} de ${productos.length} productos`;
+        `${lista.length} de ${productos.length} productos`;
 }
 
 
@@ -157,3 +160,27 @@ formProducto.addEventListener("submit", function(event) {
 
     formProducto.reset();
 });
+
+function aplicarFiltros() {
+
+    const textoBusqueda = buscarProducto.value.toLowerCase();
+    const categoriaSeleccionada = filtroCategoria.value;
+
+    const productosFiltrados = productos.filter(function(producto) {
+
+        const coincideNombre = producto.nombre
+            .toLowerCase()
+            .includes(textoBusqueda);
+
+        const coincideCategoria =
+            categoriaSeleccionada === "todas" ||
+            producto.categoria.toLowerCase() === categoriaSeleccionada;
+
+        return coincideNombre && coincideCategoria;
+    });
+
+    mostrarProductos(productosFiltrados);
+}
+
+buscarProducto.addEventListener("input", aplicarFiltros);
+filtroCategoria.addEventListener("change", aplicarFiltros);
