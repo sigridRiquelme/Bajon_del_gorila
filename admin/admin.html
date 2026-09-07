@@ -147,7 +147,7 @@
         </div>
 
 
-        <form id="formProducto">
+        <form id="formProducto" >
 
             <div class="campo-formulario">
 
@@ -159,6 +159,9 @@
                     type="text"
                     id="nombreProducto"
                     placeholder="Ej: Hamburguesa Gorila"
+                    required
+                    minlength="3"
+                    maxlength="50"
                 >
 
             </div>
@@ -173,6 +176,8 @@
                 <textarea
                     id="descripcionProducto"
                     placeholder="Descripcion"
+                    required
+                    maxlength="200"
                 ></textarea>
 
             </div>
@@ -190,6 +195,8 @@
                         type="number"
                         id="precioProducto"
                         placeholder="8990"
+                        required
+                        min="1"
                     >
 
                 </div>
@@ -205,6 +212,8 @@
                         type="number"
                         id="stockProducto"
                         placeholder="15"
+                        required
+                        min="0"
                     >
 
                 </div>
@@ -288,6 +297,7 @@
                     type="file"
                     id="imagenProducto"
                     accept="image/png, image/jpeg, image/webp"
+                    required
                 >
 
             </div>

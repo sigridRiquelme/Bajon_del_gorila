@@ -125,9 +125,14 @@ formProducto.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
+    const nombre = nombreProducto.value.trim();
+    const descripcion = descripcionProducto.value.trim();
+    const precio = Number(precioProducto.value);
+    const stock = Number(stockProducto.value);
+
+
     const archivoImagen = imagenProducto.files[0];
 
-    let rutaImagen = "../img/gorila-burger.png";
 
     if (archivoImagen) {
         rutaImagen = URL.createObjectURL(archivoImagen);
