@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menú de El Bajón del Gorila">
+  <title>El Bajón del Gorila | Menú</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/common.js" defer></script>
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="img/logo.png" alt="Logo El Bajón del Gorila">
+        <span><span class="brand-name">EL BAJÓN</span><span class="brand-subname">DEL GORILA</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a><a class="active" href="menu.html">Menú</a><a href="promociones.html">Promociones</a><a href="#">Quiénes Somos</a><a href="#">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="#" title="Mi cuenta">♙</a><a class="icon-link" href="#" title="Carrito">🛍</a><a class="btn btn-primary" href="menu.html">PEDIR AHORA</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="kicker">🍔 NUESTRO MENÚ</p>
+        <h1 class="section-title">ELIGE TU BAJÓN</h1>
+        <p>Tenemos algo para cada nivel de hambre.</p>
+      </div>
+    </section>
+
+    <section class="filter-bar" aria-label="Filtros del menú">
+      <div class="container filter-inner">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" class="input-field" type="search" placeholder="Buscar productos…" aria-label="Buscar productos">
+        </div>
+
+        <div class="category-filters">
+          <button class="filter-button active" data-category="Todos">Todos</button>
+          <button class="filter-button" data-category="Hamburguesas">Hamburguesas</button>
+          <button class="filter-button" data-category="Completos">Completos</button>
+          <button class="filter-button" data-category="Churrascos">Churrascos</button>
+          <button class="filter-button" data-category="Papas">Papas</button>
+          <button class="filter-button" data-category="Combos">Combos</button>
+          <button class="filter-button" data-category="Bebidas">Bebidas</button>
+        </div>
+
+        <select id="sortSelect" class="input-field sort-select" aria-label="Ordenar productos">
+          <option>Más vendidos</option><option>Menor precio</option><option>Mayor precio</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="menu-products">
+      <div class="container">
+        <p class="results-text"><strong id="resultCount">8</strong> productos encontrados<span id="categoryResult"></span></p>
+
+        <div id="productsGrid" class="product-grid">
+          <article class="product-card" data-category="Hamburguesas" data-price="8990" data-rating="4.9">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1553979459-d96b19656013?w=400&h=280&fit=crop&auto=format" alt="Gorila Burger"><span class="badge badge-orange product-badge">MÁS VENDIDO</span><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Hamburguesas</span><h2 class="product-title">GORILA BURGER</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.9</span></div><p class="product-description">Hamburguesa smash, queso cheddar, tocino crocante, cebolla caramelizada y salsa de la casa.</p><div class="product-footer"><span class="product-price">$8.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+
+          <article class="product-card" data-category="Hamburguesas" data-price="10990" data-rating="4.8">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=280&fit=crop&auto=format" alt="King Kong Burger"><span class="badge badge-yellow product-badge">PROMO</span><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Hamburguesas</span><h2 class="product-title">KING KONG BURGER</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.8</span></div><p class="product-description">Doble carne smash, doble queso cheddar, tocino crocante, cebolla caramelizada y salsa especial Gorila.</p><div class="product-footer"><span class="product-price">$10.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+
+          <article class="product-card" data-category="Papas" data-price="5990" data-rating="4.7">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&h=280&fit=crop&auto=format" alt="Papas Gorila"><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Papas</span><h2 class="product-title">PAPAS GORILA</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.7</span></div><p class="product-description">Papas fritas doradas cubiertas con queso cheddar derretido, tocino y cebollín.</p><div class="product-footer"><span class="product-price">$5.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+
+          <article class="product-card" data-category="Combos" data-price="11990" data-rating="4.8">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&h=280&fit=crop&auto=format" alt="Combo Bajón"><span class="badge badge-orange product-badge">MÁS VENDIDO</span><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Combos</span><h2 class="product-title">COMBO BAJÓN</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.8</span></div><p class="product-description">Hamburguesa Gorila + papas fritas + bebida de tu elección. El combo perfecto.</p><div class="product-footer"><span class="product-price">$11.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+
+          <article class="product-card" data-category="Completos" data-price="4990" data-rating="4.6">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&h=280&fit=crop&auto=format" alt="Completo Gorila"><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Completos</span><h2 class="product-title">COMPLETO GORILA</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.6</span></div><p class="product-description">Completo italiano con palta, tomate, mayo y una pizca de ají. El clásico chileno elevado.</p><div class="product-footer"><span class="product-price">$4.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+
+          <article class="product-card" data-category="Churrascos" data-price="7990" data-rating="4.7">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1544025162-d76538f38b3d?w=400&h=280&fit=crop&auto=format" alt="Churrasco Lomo"><span class="badge badge-green product-badge">NUEVO</span><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Churrascos</span><h2 class="product-title">CHURRASCO LOMO</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.7</span></div><p class="product-description">Churrasco de lomo vetado, palta, tomate, mayo y mostaza. Jugoso y bien generoso.</p><div class="product-footer"><span class="product-price">$7.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+
+          <article class="product-card" data-category="Bebidas" data-price="1990" data-rating="4.5">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1527960669566-f882ba85a4c6?w=400&h=280&fit=crop&auto=format" alt="Bebida Grande"><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Bebidas</span><h2 class="product-title">BEBIDA GRANDE</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.5</span></div><p class="product-description">Coca-Cola, Pepsi, Sprite o Fanta. 591ml bien helada para acompañar tu bajón.</p><div class="product-footer"><span class="product-price">$1.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+
+          <article class="product-card" data-category="Combos" data-price="12990" data-rating="4.9">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1540189549336-e6e99ead2e05?w=400&h=280&fit=crop&auto=format" alt="Combo King Kong"><span class="badge badge-yellow product-badge">PROMO</span><button class="like-button" aria-label="Favorito">🤍</button></div>
+            <div class="product-body"><span class="product-category">Combos</span><h2 class="product-title">COMBO KING KONG</h2><div class="rating"><span class="stars">★★★★</span><span class="rating-number">4.9</span></div><p class="product-description">King Kong Burger + papas fritas + bebida. El combo más bestial de todo el menú.</p><div class="product-footer"><span class="product-price">$12.990</span><button class="add-button">+ AGREGAR</button></div></div>
+          </article>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="emoji">🦍</div>
+          <h3>NO ENCONTRAMOS ESO</h3>
+          <p>Intenta con otra búsqueda o categoría.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-brand"><img class="brand-logo" src="img/logo.png" alt="Logo El Bajón del Gorila"><div><span class="brand-name">EL BAJÓN</span><span class="brand-subname">DEL GORILA</span></div></div><p class="footer-description">El local de fast food más bestial de Santiago. Hecho con pasión, ingredientes de verdad y el hambre de un gorila.</p><div class="social-links"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a></div></div>
+        <div class="footer-column"><h4>MENÚ</h4><a href="menu.html">Hamburguesas</a><a href="menu.html">Completos</a><a href="menu.html">Churrascos</a><a href="menu.html">Papas Fritas</a><a href="menu.html">Combos</a><a href="menu.html">Bebidas</a></div>
+        <div class="footer-column"><h4>LINKS</h4><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="promociones.html">Promociones</a><a href="#">Quiénes Somos</a><a href="#">Contacto</a><a href="#">Mi Cuenta</a></div>
+        <div class="footer-column contact-lines"><h4>CONTACTO</h4><p>Av. Providencia 1234, Santiago</p><p>+56 9 8765 4321</p><p>hola@elbajondelgorila.cl</p><div class="schedule-box"><p><strong>Horario</strong></p><p>Lun–Jue: 12:00 – 23:00</p><p>Vie–Sáb: 12:00 – 01:00</p><p>Dom: 13:00 – 22:00</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 El Bajón del Gorila. Todos los derechos reservados.</p><p>Hecho con amor en Santiago, Chile</p></div>
+    </div>
+  </footer>
+</body>
+</html>
