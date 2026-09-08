@@ -1,79 +1,79 @@
-const searchInput = document.getElementById('searchInput');
-const sortSelect = document.getElementById('sortSelect');
-const filterButtons = document.querySelectorAll('.filter-button');
-const productsGrid = document.getElementById('productsGrid');
-const productCards = Array.from(document.querySelectorAll('.product-card'));
-const resultCount = document.getElementById('resultCount');
-const categoryResult = document.getElementById('categoryResult');
-const emptyState = document.getElementById('emptyState');
+const buscador = document.getElementById('buscador');
+const selectorOrden = document.getElementById('selectorOrden');
+const botonesFiltro = document.querySelectorAll('.boton-filtro');
+const grillaProductos = document.getElementById('grillaProductos');
+const tarjetasProducto = Array.from(document.querySelectorAll('.tarjeta-producto'));
+const cantidadResultados = document.getElementById('cantidadResultados');
+const categoriaResultado = document.getElementById('categoriaResultado');
+const estadoVacio = document.getElementById('estadoVacio');
 
-let activeCategory = 'Todos';
+let categoriaActiva = 'Todos';
 
-function normalizeText(text) {
-  return text
+function normalizarTexto(texto) {
+  return texto
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '');
 }
 
-function updateMenu() {
-  const searchText = normalizeText(searchInput.value.trim());
+function actualizarMenu() {
+  const textoBusqueda = normalizarTexto(buscador.value.trim());
 
-  const visibleCards = productCards.filter(function (card) {
-    const category = card.dataset.category;
-    const searchableText = normalizeText(card.textContent);
+  const tarjetasVisibles = tarjetasProducto.filter(function (tarjeta) {
+    const categoria = tarjeta.dataset.categoria;
+    const textoBuscable = normalizarTexto(tarjeta.textContent);
 
-    const categoryMatches = activeCategory === 'Todos' || category === activeCategory;
-    const searchMatches = searchableText.includes(searchText);
+    const coincideCategoria = categoriaActiva === 'Todos' || categoria === categoriaActiva;
+    const coincideBusqueda = textoBuscable.includes(textoBusqueda);
 
-    return categoryMatches && searchMatches;
+    return coincideCategoria && coincideBusqueda;
   });
 
-  productCards.forEach(function (card) {
-    card.style.display = visibleCards.includes(card) ? 'flex' : 'none';
+  tarjetasProducto.forEach(function (tarjeta) {
+    tarjeta.style.display = tarjetasVisibles.includes(tarjeta) ? 'flex' : 'none';
   });
 
-  const sortType = sortSelect.value;
+  const tipoOrden = selectorOrden.value;
 
-  visibleCards.sort(function (cardA, cardB) {
-    const priceA = Number(cardA.dataset.price);
-    const priceB = Number(cardB.dataset.price);
-    const ratingA = Number(cardA.dataset.rating);
-    const ratingB = Number(cardB.dataset.rating);
+  tarjetasVisibles.sort(function (tarjetaA, tarjetaB) {
+    const precioA = Number(tarjetaA.dataset.precio);
+    const precioB = Number(tarjetaB.dataset.precio);
+    const valoracionA = Number(tarjetaA.dataset.valoracion);
+    const valoracionB = Number(tarjetaB.dataset.valoracion);
 
-    if (sortType === 'Menor precio') {
-      return priceA - priceB;
+    if (tipoOrden === 'Menor precio') {
+      return precioA - precioB;
     }
 
-    if (sortType === 'Mayor precio') {
-      return priceB - priceA;
+    if (tipoOrden === 'Mayor precio') {
+      return precioB - precioA;
     }
 
-    return ratingB - ratingA;
+    return valoracionB - valoracionA;
   });
 
-  visibleCards.forEach(function (card) {
-    productsGrid.appendChild(card);
+  tarjetasVisibles.forEach(function (tarjeta) {
+    grillaProductos.appendChild(tarjeta);
   });
 
-  resultCount.textContent = visibleCards.length;
-  categoryResult.textContent = activeCategory === 'Todos' ? '' : ' en ' + activeCategory;
-  emptyState.classList.toggle('show', visibleCards.length === 0);
+  cantidadResultados.textContent = tarjetasVisibles.length;
+  categoriaResultado.textContent = categoriaActiva === 'Todos' ? '' : ' en ' + categoriaActiva;
+  estadoVacio.classList.toggle('mostrar', tarjetasVisibles.length === 0);
 }
 
-filterButtons.forEach(function (button) {
-  button.addEventListener('click', function () {
-    filterButtons.forEach(function (otherButton) {
-      otherButton.classList.remove('active');
+botonesFiltro.forEach(function (boton) {
+  boton.addEventListener('click', function () {
+    botonesFiltro.forEach(function (otroBoton) {
+      otroBoton.classList.remove('activo');
     });
 
-    button.classList.add('active');
-    activeCategory = button.dataset.category;
-    updateMenu();
+    boton.classList.add('activo');
+    categoriaActiva = boton.dataset.categoria;
+    actualizarMenu();
   });
 });
 
-searchInput.addEventListener('input', updateMenu);
-sortSelect.addEventListener('change', updateMenu);
+buscador.addEventListener('input', actualizarMenu);
+selectorOrden.addEventListener('change', actualizarMenu);
 
-updateMenu();
+actualizarMenu();

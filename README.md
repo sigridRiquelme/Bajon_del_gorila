@@ -1,29 +1,54 @@
-# El Bajón del Gorila - versión HTML/CSS/JS
+# El Bajón del Gorila — versión unificada
 
-Replica de las páginas **Inicio**, **Menú** y **Promociones** del mockup original de Figma Make, reconstruida con tecnologías web básicas.
+Proyecto HTML/CSS/JavaScript que integra las páginas públicas (Inicio, Menú y Promociones) con los módulos de Carrito/Checkout y Administración.
 
 ## Estructura
 
 ```text
-el-bajon-html/
+el-bajon-unificado/
 ├── index.html
 ├── menu.html
 ├── promociones.html
+├── carrito/
+│   ├── carrito.html
+│   ├── entrega.html
+│   └── confirmacion.html
+├── admin/
+│   ├── productos.html
+│   ├── pedidos.html
+│   └── usuarios.html
 ├── css/
-│   └── style.css
+│   ├── base.css
+│   ├── header.css
+│   ├── footer.css
+│   ├── componentes.css
+│   ├── inicio.css
+│   ├── menu.css
+│   ├── promociones.css
+│   ├── responsive.css
+│   ├── checkout.css
+│   └── admin.css
 ├── js/
-│   ├── common.js
+│   ├── comun.js
 │   ├── menu.js
-│   └── promociones.js
+│   ├── promociones.js
+│   ├── carrito.js
+│   ├── entrega.js
+│   ├── productos.js
+│   ├── pedidos.js
+│   └── usuarios.js
 └── img/
-    └── logo.png
 ```
 
-## Ejecutar en Visual Studio Code
+## Decisiones de integración
 
-1. Abre la carpeta `el-bajon-html` en Visual Studio Code.
-2. Instala la extensión **Live Server** si aún no la tienes.
-3. Haz clic derecho sobre `index.html`.
-4. Selecciona **Open with Live Server**.
+- `header.css` y `footer.css` son compartidos por Inicio, Menú, Promociones y Checkout.
+- Se conservaron nombres como `header`, `footer`, `navbar`, `checkout` y `btn` donde ya formaban parte del código del grupo.
+- Los HTML del carrito se mantienen en `carrito/` y los del panel en `admin/` para separar módulos.
+- Los CSS y JS se centralizaron en `css/` y `js/`.
+- Las rutas relativas fueron actualizadas para funcionar desde las subcarpetas.
+- Bootstrap Icons se conserva porque el header del carrito lo utiliza.
 
-No requiere React, Vite, npm ni Tailwind.
+## Pendiente funcional importante
+
+Los botones `+ AGREGAR` del Menú todavía no comparten datos con `carrito.js`. El carrito actual contiene un producto de ejemplo definido directamente en el JavaScript. Para una integración completa se debe crear un estado compartido, por ejemplo usando `localStorage`.

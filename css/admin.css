@@ -1,0 +1,686 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f3ee;
+    color: #111;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .contenido-admin {
+        padding: 35px 25px;
+    }
+
+    .encabezado-productos {
+        gap: 20px;
+    }
+
+    .filtros-productos {
+        flex-wrap: wrap;
+    }
+
+    .filtros-productos input,
+    .filtros-productos select {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+/* ========================================
+   CONTENEDOR GENERAL
+======================================== */
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   MENÚ LATERAL
+======================================== */
+
+.sidebar {
+    width: 255px;
+    height: 100vh;
+
+    background-color: #171717;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo-admin {
+    padding: 25px;
+}
+
+.logo-admin img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+
+/* ========================================
+   PANEL DE ADMIN
+======================================== */
+
+.admin-label {
+    margin: 0 23px 25px 23px;
+    padding: 8px 12px;
+
+    background-color: #292929;
+    color: #ffc400;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    width: fit-content;
+
+    border-radius: 6px;
+}
+
+
+/* ========================================
+   MENÚ DE NAVEGACIÓN
+======================================== */
+
+.menu-admin {
+    display: flex;
+    flex-direction: column;
+
+    border-top: 1px solid #2c2c2c;
+}
+
+.menu-admin a {
+    color: #cfcfcf;
+    text-decoration: none;
+
+    padding: 20px 25px;
+
+    font-size: 16px;
+
+    border-left: 3px solid transparent;
+}
+
+.menu-admin a:hover {
+    background-color: #242424;
+    color: white;
+}
+
+.menu-admin a.active {
+    background-color: #302016;
+    color: #ff6500;
+
+    border-left: 3px solid #ff6500;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   INFORMACIÓN DEL ADMINISTRADOR
+======================================== */
+
+.admin-info {
+    margin-top: auto;
+
+    padding: 22px;
+
+    border-top: 1px solid #2c2c2c;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.admin-info strong {
+    font-size: 14px;
+}
+
+.admin-info span {
+    color: #969696;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ========================================
+   BOTÓN VOLVER AL SITIO
+======================================== */
+
+.volver-sitio {
+    text-decoration: none;
+
+    color: #aaa;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 7px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.volver-sitio:hover {
+    color: white;
+    border-color: #666;
+}
+
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.contenido-admin {
+    margin-left: 255px;
+
+    width: calc(100% - 255px);
+
+    padding: 50px 45px;
+}
+
+
+/* ========================================
+   ENCABEZADO PRODUCTOS
+======================================== */
+
+.encabezado-productos {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado-productos h1 {
+    font-size: 38px;
+}
+
+.encabezado-productos p {
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   BOTÓN AGREGAR PRODUCTO
+======================================== */
+
+.btn-agregar {
+    background-color: #ff6500;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 16px 22px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.btn-agregar:hover {
+    background-color: #e95c00;
+}
+
+
+/* ========================================
+   FILTROS DE PRODUCTOS
+======================================== */
+
+.filtros-productos {
+    margin-top: 30px;
+
+    background-color: white;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* BUSCADOR */
+
+.filtros-productos input {
+    width: 270px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dedbd5;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+/* CUANDO HACEMOS CLICK EN EL BUSCADOR */
+
+.filtros-productos input:focus {
+    border-color: #ff6500;
+}
+
+
+/* SELECT DE CATEGORÍAS */
+
+.filtros-productos select {
+    width: 220px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dedbd5;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+/* ========================================
+   TABLA DE PRODUCTOS
+======================================== */
+
+.tabla-productos {
+    margin-top: 18px;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    overflow: auto;
+}
+
+.tabla-productos table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+
+/* CABECERA */
+
+.tabla-productos thead {
+    background-color: #171717;
+}
+
+.tabla-productos th {
+    padding: 17px 18px;
+
+    color: #ffc400;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-align: left;
+}
+
+/* ========================================
+   FILAS DE PRODUCTOS
+======================================== */
+
+.tabla-productos td {
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+
+/* IMAGEN */
+
+.imagen-producto {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+/* PRECIO */
+
+.precio {
+    color: #ff6500;
+
+    font-weight: bold;
+}
+
+
+/* STOCK */
+
+.stock-disponible {
+    color: #236b2c;
+
+    font-weight: bold;
+}
+
+.unidad-stock {
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* ESTADO */
+
+.estado-producto {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.estado-producto.disponible {
+    color: #236b2c;
+
+    background-color: #edf4ec;
+
+    border: 1px solid #5e895f;
+}
+
+
+/* ACCIONES */
+
+.acciones {
+    white-space: nowrap;
+}
+
+
+.btn-eliminar {
+    padding: 9px 13px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+
+/* ELIMINAR */
+
+.btn-eliminar {
+    background-color: #fff3f3;
+    color: #e32626;
+
+    border: 1px solid #f0b8b8;
+}
+
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .contenido-admin {
+        padding: 35px 25px;
+    }
+
+    .encabezado-productos {
+        gap: 20px;
+    }
+
+    .filtros-productos {
+        flex-wrap: wrap;
+    }
+
+    .filtros-productos input,
+    .filtros-productos select {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+/* ========================================
+   MODAL AGREGAR PRODUCTO
+======================================== */
+
+.modal-producto {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+/* CAJA DEL MODAL */
+
+.modal-contenido {
+    width: 520px;
+    max-width: 90%;
+
+    background-color: #f7f5f0;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* CABECERA */
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.modal-header h2 {
+    font-size: 24px;
+}
+
+
+/* BOTÓN X */
+
+.btn-cerrar-modal {
+    background: none;
+    border: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+
+/* CAMPOS */
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 16px;
+}
+
+.campo-formulario label {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* INPUTS, SELECT Y TEXTAREA */
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d7d3cc;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    background-color: white;
+
+    outline: none;
+}
+
+
+/* EFECTO AL HACER CLICK */
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    border-color: #ff6500;
+}
+
+
+/* DESCRIPCIÓN */
+
+.campo-formulario textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+
+/* DOS CAMPOS EN UNA FILA */
+
+.fila-formulario {
+    display: flex;
+
+    gap: 15px;
+}
+
+.fila-formulario .campo-formulario {
+    flex: 1;
+}
+
+
+/* BOTONES */
+
+.acciones-formulario {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.btn-guardar,
+.btn-cancelar {
+    flex: 1;
+
+    padding: 13px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* GUARDAR */
+
+.btn-guardar {
+    background-color: #ff6500;
+
+    color: white;
+
+    border: none;
+}
+
+.btn-guardar:hover {
+    background-color: #e95c00;
+}
+
+
+/* CANCELAR */
+
+.btn-cancelar {
+    background-color: white;
+
+    color: #333;
+
+    border: 1px solid #ccc;
+}
+
+.modal-producto.activo {
+    display: flex;
+}
+
+
+/* AGREGAR PRODUCTO */
+.contenedor-btn-agregar {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 35px;
+}
