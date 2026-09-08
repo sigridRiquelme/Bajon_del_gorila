@@ -1134,3 +1134,103 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* DETALLE DEL PEDIDO EN CONFIRMACION */
+
+.detalle-pedido-confirmacion {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    padding: 25px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+
+    text-align: left;
+}
+
+.detalle-pedido-confirmacion h2 {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+}
+
+
+/* PRODUCTO */
+
+.producto-confirmacion {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.producto-confirmacion img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.info-producto-confirmacion {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    flex: 1;
+}
+
+.info-producto-confirmacion span {
+    color: #777;
+
+    font-size: 14px;
+}
+
+.precio-producto-confirmacion {
+    color: #171717;
+
+    white-space: nowrap;
+}
+
+
+/* SUBTOTAL Y DELIVERY */
+
+.fila-detalle-confirmacion {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    color: #666;
+}
+
+
+/* TOTAL */
+
+.total-detalle-confirmacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+    padding-top: 15px;
+
+    border-top: 1px solid #dddddd;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total-detalle-confirmacion strong {
+    color: #ff6500;
+
+    font-size: 22px;
+}
