@@ -70,7 +70,9 @@ function mostrarProductos(lista = productos) {
                 </td>
 
                 <td>
-                    <select class="estado-producto">
+                    <select class="estado-producto"
+                    onchange="cambiarEstado(${producto.id}, this.value)"
+                    >
                         <option value="Disponible"
                             ${producto.estado === "Disponible" ? "selected" : ""}>
                             Disponible
@@ -90,11 +92,10 @@ function mostrarProductos(lista = productos) {
 
                 <td class="acciones">
 
-                    <button class="btn-editar">
-                        EDITAR
-                    </button>
-
-                    <button class="btn-eliminar">
+                    <button
+                        class="btn-eliminar"
+                        onclick="eliminarProducto(${producto.id})"
+                    >
                         ELIMINAR
                     </button>
 
@@ -109,6 +110,36 @@ function mostrarProductos(lista = productos) {
         `${lista.length} de ${productos.length} productos`;
 }
 
+function eliminarProducto(id) {
+
+    const confirmar = confirm(
+        "¿Seguro que deseas eliminar este producto?"
+    );
+
+    if (!confirmar) {
+        return;
+    }
+
+    const posicion = productos.findIndex(function(producto) {
+        return producto.id === id;
+    });
+
+    if (posicion !== -1) {
+        productos.splice(posicion, 1);
+        mostrarProductos();
+    }
+}
+
+function cambiarEstado(id, nuevoEstado) {
+
+    const producto = productos.find(function(producto) {
+        return producto.id === id;
+    });
+
+    if (producto) {
+        producto.estado = nuevoEstado;
+    }
+}
 
 mostrarProductos();
 
@@ -136,6 +167,7 @@ formProducto.addEventListener("submit", function(event) {
 
     const archivoImagen = imagenProducto.files[0];
 
+    let rutaImagen = "";
 
     if (archivoImagen) {
         rutaImagen = URL.createObjectURL(archivoImagen);

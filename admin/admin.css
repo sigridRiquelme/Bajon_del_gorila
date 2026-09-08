@@ -441,7 +441,7 @@ body {
     white-space: nowrap;
 }
 
-.btn-editar,
+
 .btn-eliminar {
     padding: 9px 13px;
 
@@ -453,17 +453,6 @@ body {
     cursor: pointer;
 }
 
-
-/* EDITAR */
-
-.btn-editar {
-    background-color: #171717;
-    color: white;
-
-    border: none;
-
-    margin-right: 6px;
-}
 
 
 /* ELIMINAR */
@@ -686,4 +675,12 @@ body {
 
 .modal-producto.activo {
     display: flex;
+}
+
+
+/* AGREGAR PRODUCTO */
+.contenedor-btn-agregar {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 35px;
 }
