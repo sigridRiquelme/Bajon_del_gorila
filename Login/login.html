@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - El Bajón del Gorila</title>
+  
+  <!-- Iconos de Bootstrap para el usuario y la bolsa de compra del header -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Estilos del grupo y estilos de tu login -->
+  <link rel="stylesheet" href="checkout.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <!-- HEADER OFICIAL DEL GRUPO -->
+  <header class="header-checkout">
+    <div class="logo-checkout">
+      <img src="img/logo-bajon-2.png" alt="El Bajón del Gorila">
+    </div>
+
+    <nav class="navbar-checkout">
+      <a href="index.html">Inicio</a>
+      <a href="#">Menú</a>
+      <a href="#">Promociones</a>
+      <a href="nosotros.html">Quiénes Somos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="acciones-header">
+      <a href="login.html" class="icono-header" aria-label="Mi cuenta">
+        <i class="bi bi-person"></i>
+      </a>
+
+      <a href="carrito.html" class="carrito-header" aria-label="Carrito">
+        <i class="bi bi-bag"></i>
+        <span class="contador-header" id="contadorHeader">0</span>
+      </a>
+
+      <a href="#" class="btn-pedir-header">PEDIR AHORA</a>
+    </div>
+  </header>
+
+  <!-- LOGIN (TU TRABAJO PRINCIPAL) -->
+  <main class="login-container">
+    <section class="login-card">
+      <div class="login-header">
+        <img src="img/logo-bajon.png" alt="El Bajón del Gorila" class="login-logo-img">
+        <h1>Iniciar Sesión</h1>
+        <p>Ingresa para pedir tu bajón favorito</p>
+      </div>
+
+      <div id="alertSuccess" class="alert-success"></div>
+
+      <form id="formLogin" novalidate>
+        <div class="form-group">
+          <label for="correo">Correo Electrónico</label>
+          <input 
+            type="email" 
+            id="correo" 
+            name="correo" 
+            placeholder="usuario@duoc.cl o @gmail.com"
+            maxlength="100"
+          >
+          <span id="errorCorreo" class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Entre 4 y 10 caracteres"
+            maxlength="10"
+          >
+          <span id="errorPassword" class="error-msg"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Iniciar Sesión</button>
+      </form>
+
+      <div class="form-footer">
+        ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER OFICIAL DEL GRUPO -->
+  <footer class="footer-checkout">
+    <div class="footer-columnas">
+      <div class="footer-marca">
+        <img src="img/logo-bajon.png" alt="El Bajón del Gorila">
+        <p>
+          El local de fast food más bestial de Santiago.
+          Hecho con pasión, ingredientes de verdad
+          y el hambre de un gorila.
+        </p>
+
+        <div class="redes-footer">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>MENÚ</h3>
+        <a href="#">Hamburguesas</a>
+        <a href="#">Completos</a>
+        <a href="#">Churrascos</a>
+        <a href="#">Papas Fritas</a>
+        <a href="#">Combos</a>
+        <a href="#">Bebidas</a>
+      </div>
+
+      <div>
+        <h3>LINKS</h3>
+        <a href="index.html">Inicio</a>
+        <a href="#">Menú</a>
+        <a href="#">Promociones</a>
+        <a href="nosotros.html">Quiénes Somos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="login.html">Mi Cuenta</a>
+      </div>
+
+      <div>
+        <h3>CONTACTO</h3>
+        <p>Av. Providencia 1234, Santiago</p>
+        <p>+56 9 8765 4321</p>
+        <p>hola@elbajondelgorila.cl</p>
+
+        <div class="horario-footer">
+          <strong>Horario</strong>
+          <p>Lun–Jue: 12:00 – 23:00</p>
+          <p>Vie–Sáb: 12:00 – 01:00</p>
+          <p>Dom: 13:00 – 22:00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-inferior">
+      <span>©️ 2026 El Bajón del Gorila. Todos los derechos reservados.</span>
+      <span>Hecho con amor en Santiago, Chile</span>
+    </div>
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+</html>
