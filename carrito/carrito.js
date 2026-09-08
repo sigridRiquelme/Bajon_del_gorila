@@ -9,11 +9,23 @@ const carrito = [
 ];
 
 
-const listaCarrito = document.getElementById("listaCarrito");
-const contadorCarrito = document.getElementById("contadorCarrito");
+const listaCarrito =
+    document.getElementById("listaCarrito");
 
-const subtotal = document.getElementById("subtotal");
-const totalPedido = document.getElementById("totalPedido");
+const contadorCarrito =
+    document.getElementById("contadorCarrito");
+
+const contadorHeader =
+    document.getElementById("contadorHeader");
+
+const subtotal =
+    document.getElementById("subtotal");
+
+const totalPedido =
+    document.getElementById("totalPedido");
+
+const btnConfirmarPedido =
+    document.getElementById("btnConfirmarPedido");
 
 
 function mostrarCarrito() {
@@ -46,7 +58,9 @@ function mostrarCarrito() {
 
                     <div class="cantidad-producto">
 
-                        <button onclick="disminuirCantidad(${producto.id})">
+                        <button
+                            onclick="disminuirCantidad(${producto.id})"
+                        >
                             -
                         </button>
 
@@ -54,7 +68,9 @@ function mostrarCarrito() {
                             ${producto.cantidad}
                         </span>
 
-                        <button onclick="aumentarCantidad(${producto.id})">
+                        <button
+                            onclick="aumentarCantidad(${producto.id})"
+                        >
                             +
                         </button>
 
@@ -82,23 +98,32 @@ function mostrarCarrito() {
 
 function actualizarResumen() {
 
-    let totalProductos = 0;
+    let cantidadTotal = 0;
     let subtotalCarrito = 0;
 
 
     carrito.forEach(function(producto) {
 
-        totalProductos += producto.cantidad;
+        cantidadTotal += producto.cantidad;
 
         subtotalCarrito +=
             producto.precio * producto.cantidad;
+
     });
 
 
     contadorCarrito.textContent =
-    totalProductos === 1
-        ? "1 producto"
-        : `${totalProductos} productos`;
+        cantidadTotal === 1
+            ? "1 producto"
+            : `${cantidadTotal} productos`;
+
+
+    if (contadorHeader) {
+
+        contadorHeader.textContent =
+            cantidadTotal;
+
+    }
 
 
     subtotal.textContent =
@@ -112,9 +137,12 @@ function actualizarResumen() {
 
 function aumentarCantidad(id) {
 
-    const producto = carrito.find(function(producto) {
-        return producto.id === id;
-    });
+    const producto =
+        carrito.find(function(producto) {
+
+            return producto.id === id;
+
+        });
 
 
     if (producto) {
@@ -122,15 +150,19 @@ function aumentarCantidad(id) {
         producto.cantidad++;
 
         mostrarCarrito();
+
     }
 }
 
 
 function disminuirCantidad(id) {
 
-    const producto = carrito.find(function(producto) {
-        return producto.id === id;
-    });
+    const producto =
+        carrito.find(function(producto) {
+
+            return producto.id === id;
+
+        });
 
 
     if (producto && producto.cantidad > 1) {
@@ -138,15 +170,19 @@ function disminuirCantidad(id) {
         producto.cantidad--;
 
         mostrarCarrito();
+
     }
 }
 
 
 function eliminarDelCarrito(id) {
 
-    const posicion = carrito.findIndex(function(producto) {
-        return producto.id === id;
-    });
+    const posicion =
+        carrito.findIndex(function(producto) {
+
+            return producto.id === id;
+
+        });
 
 
     if (posicion !== -1) {
@@ -154,8 +190,29 @@ function eliminarDelCarrito(id) {
         carrito.splice(posicion, 1);
 
         mostrarCarrito();
+
     }
 }
+
+
+btnConfirmarPedido.addEventListener(
+    "click",
+    function() {
+
+        if (carrito.length === 0) {
+
+            alert("El carrito está vacío.");
+
+            return;
+
+        }
+
+
+        window.location.href =
+            "entrega.html";
+
+    }
+);
 
 
 mostrarCarrito();
