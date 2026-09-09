@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Usuarios | El Bajón del Gorila</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+
+<body>
+
+    <div class="admin-container">
+
+
+        <!-- MENÚ LATERAL -->
+        <aside class="sidebar">
+
+            <div class="logo-admin">
+
+                <img
+                    src="../img/logo-bajon.png"
+                    alt="El Bajón del Gorila"
+                >
+
+            </div>
+
+
+            <div class="admin-label">
+                PANEL DE ADMIN
+            </div>
+
+
+            <nav class="menu-admin">
+
+                <a href="productos.html">
+                    Productos
+                </a>
+
+                <a href="pedidos.html">
+                    Pedidos
+                </a>
+
+                <a href="usuarios.html" class="active">
+                    Usuarios
+                </a>
+
+            </nav>
+
+
+            <div class="admin-info">
+
+                <strong>Administrador</strong>
+
+                <span>
+                    admin@gorila.cl
+                </span>
+
+                <a href="../index.html" class="volver-sitio">
+                    Volver al sitio
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="contenido-admin">
+
+
+            <!-- ENCABEZADO -->
+            <header class="encabezado-productos">
+
+                <div>
+
+                    <h1>GESTION DE USUARIOS</h1>
+
+                    <p id="contadorUsuarios">
+                        0 usuarios
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- FILTROS -->
+            <section class="filtros-productos">
+
+                <input
+                    type="text"
+                    id="buscarUsuario"
+                    placeholder="Buscar por nombre o correo..."
+                >
+
+
+                <select id="filtroRol">
+
+                    <option value="todos">
+                        Todos los roles
+                    </option>
+
+                    <option value="cliente">
+                        Cliente
+                    </option>
+
+                    <option value="administrador">
+                        Administrador
+                    </option>
+
+                </select>
+
+            </section>
+
+
+
+            <!-- TABLA DE USUARIOS -->
+            <section class="tabla-productos">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>CORREO</th>
+                            <th>ROL</th>
+                            <th>ESTADO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaUsuarios">
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/usuarios.js"></script>
+
+</body>
+
+</html>
