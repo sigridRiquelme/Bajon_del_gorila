@@ -147,7 +147,7 @@
             </h1>
 
 
-            <form id="formEntrega">
+            <form id="formEntrega" novalidate>
 
 
                 <!-- NOMBRE Y APELLIDO -->
@@ -164,7 +164,7 @@
                             type="text"
                             id="nombreCliente"
                             placeholder="Juan"
-                            required
+                            
                         >
 
                     </div>
@@ -180,7 +180,7 @@
                             type="text"
                             id="apellidoCliente"
                             placeholder="González"
-                            required
+                            
                         >
 
                     </div>
@@ -202,8 +202,9 @@
                         <input
                             type="tel"
                             id="telefonoCliente"
+                            value="+569"
                             placeholder="+56 9 1234 5678"
-                            required
+                            
                         >
 
                     </div>
@@ -218,8 +219,8 @@
                         <input
                             type="email"
                             id="correoCliente"
-                            placeholder="juan@email.com"
-                            required
+                            placeholder="juan@gmail.com"
+                            
                         >
 
                     </div>
@@ -296,7 +297,7 @@
                         type="text"
                         id="direccionCliente"
                         placeholder="Ej: Av. Principal 123"
-                        required
+                        
                     >
 
                 </div>
@@ -315,7 +316,7 @@
 
                     <select
                         id="comunaCliente"
-                        required
+                        
                     >
 
                         <option value="">
@@ -660,7 +661,7 @@
     </footer>
 
 
-    <script src="css/checkout.css"></script>
+    <script src="js/entrega.js"></script>
 
 </body>
 
