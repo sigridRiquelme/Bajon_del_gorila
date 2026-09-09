@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (v === "") return "El correo electronico es obligatorio."
         const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!regexEmail.test(v)) return "Ingresa un formato de correo valido (ej: usuario@correo.com.";
+        return "";
     }
 
     function validarTelefono(valor) {
@@ -38,11 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (v === "") return ""; //campo opcional
         const regexTel = /^[0-9+ ]{8,12}$/;
         if (!regexTel.test(v)) return "Telefono invalido (ej: +56912345678 o 912345678).";
+        return "";
     }
 
     function validarAsunto(valor) {
         if (valor === "") return "Debes seleccionar un motivo de contacto.";
-        return"";
+        return "";
     }
 
     function validarMensaje(valor) {

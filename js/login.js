@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Captura de elementos del dom
     const form = document.getElementById("formLogin");
     const correoInput = document.getElementById("correo");
-    const passwordInput= document.getElementById("paassword");
+    const passwordInput= document.getElementById("password");
 
-    const errrorCorreo = document.getElementById("errorCorreo");
+    const errorCorreo = document.getElementById("errorCorreo");
     const errorPassword = document.getElementById("errorPassword");
     const alertSuccess = document.getElementById("alertSuccess");
 
