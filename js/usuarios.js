@@ -2,18 +2,19 @@ const usuarios = [
     {
         id: 1,
         nombre: "Juan Pérez",
-        correo: "juan@email.com",
+        correo: "juan@gmail.com",
         rol: "Cliente",
         estado: "Activo"
     },
     {
         id: 2,
         nombre: "Sigrid",
-        correo: "admin@gorila.cl",
+        correo: "admin@duoc.cl",
         rol: "Administrador",
         estado: "Activo"
     }
 ];
+
 
 
 const listaUsuarios = document.getElementById("listaUsuarios");
