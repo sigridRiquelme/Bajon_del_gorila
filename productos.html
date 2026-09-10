@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Panel de Administración | El Bajón del Gorila</title>
-    
-    <link rel="stylesheet" href="../css/admin.css"> 
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
 </head>
 
 
@@ -22,7 +28,10 @@
 
             <div class="logo-admin">
 
-                <img src="../img/logo-bajon.png" alt="El Bajón del Gorila">
+                <img
+                    src="img/logo-bajon.png"
+                    alt="El Bajón del Gorila"
+                >
 
             </div>
 
@@ -34,7 +43,10 @@
 
             <nav class="menu-admin">
 
-                <a href="productos.html" class="active">
+                <a
+                    href="productos.html"
+                    class="active"
+                >
                     Productos
                 </a>
 
@@ -55,7 +67,10 @@
 
                 <span>admin@gorila.cl</span>
 
-                <a href="../index.html" class="volver-sitio">
+                <a
+                    href="index.html"
+                    class="volver-sitio"
+                >
                     Volver al sitio
                 </a>
 
@@ -72,14 +87,18 @@
 
                 <div>
                     <h1>PRODUCTOS</h1>
-                    <p id="contadorProductos">0 productos</p>
+                    <p
+                        id="contadorProductos"
+                    >
+                        0 productos
+                    </p>
                 </div>
 
 
-                
+
 
             </header>
-            
+
             <section class="filtros-productos">
 
                 <input
@@ -90,14 +109,46 @@
 
                 <select id="filtroCategoria">
 
-                    <option value="todas">Todas las categorías</option>
-                    <option value="hamburguesas">Hamburguesas</option>
-                    <option value="completos">Completos</option>
-                    <option value="churrascos">Churrascos</option>
-                    <option value="papas">Papas</option>
-                    <option value="combos">Combos</option>
-                    <option value="bebidas">Bebidas</option>
-                    <option value="otros">Otros</option>
+                    <option
+                        value="todas"
+                    >
+                        Todas las categorías
+                    </option>
+                    <option
+                        value="hamburguesas"
+                    >
+                        Hamburguesas
+                    </option>
+                    <option
+                        value="completos"
+                    >
+                        Completos
+                    </option>
+                    <option
+                        value="churrascos"
+                    >
+                        Churrascos
+                    </option>
+                    <option
+                        value="papas"
+                    >
+                        Papas
+                    </option>
+                    <option
+                        value="combos"
+                    >
+                        Combos
+                    </option>
+                    <option
+                        value="bebidas"
+                    >
+                        Bebidas
+                    </option>
+                    <option
+                        value="otros"
+                    >
+                        Otros
+                    </option>
 
                 </select>
 
@@ -122,7 +173,7 @@
                     </thead>
 
                     <tbody id="listaProductos">
-                        
+
                     </tbody>
 
                 </table>
@@ -130,7 +181,10 @@
             </section>
 
             <div class="contenedor-btn-agregar">
-                <button class="btn-agregar" id="btnAgregarProducto">
+                <button
+                    class="btn-agregar"
+                    id="btnAgregarProducto"
+                >
                     + AGREGAR PRODUCTO
                 </button>
 
@@ -141,7 +195,10 @@
 
     </div>
 
-    <div class="modal-producto" id="modalProducto">
+    <div
+        class="modal-producto"
+        id="modalProducto"
+    >
 
     <div class="modal-contenido">
 
@@ -149,14 +206,20 @@
 
             <h2>AGREGAR PRODUCTO</h2>
 
-            <button class="btn-cerrar-modal" id="cerrarModal">
+            <button
+                class="btn-cerrar-modal"
+                id="cerrarModal"
+            >
                 ×
             </button>
 
         </div>
 
 
-        <form id="formProducto" >
+        <form
+            id="formProducto"
+            novalidate
+        >
 
             <div class="campo-formulario">
 
@@ -168,9 +231,7 @@
                     type="text"
                     id="nombreProducto"
                     placeholder="Ej: Hamburguesa Gorila"
-                    required
-                    minlength="3"
-                    maxlength="50"
+
                 >
 
             </div>
@@ -185,8 +246,6 @@
                 <textarea
                     id="descripcionProducto"
                     placeholder="Descripcion"
-                    required
-                    maxlength="200"
                 ></textarea>
 
             </div>
@@ -204,8 +263,6 @@
                         type="number"
                         id="precioProducto"
                         placeholder="8990"
-                        required
-                        min="1"
                     >
 
                 </div>
@@ -221,8 +278,6 @@
                         type="number"
                         id="stockProducto"
                         placeholder="15"
-                        required
-                        min="0"
                     >
 
                 </div>
@@ -318,11 +373,18 @@
 
             <div class="acciones-formulario">
 
-                <button type="submit" class="btn-guardar">
+                <button
+                    type="submit"
+                    class="btn-guardar"
+                >
                     GUARDAR PRODUCTO
                 </button>
 
-                <button type="button" class="btn-cancelar" id="cancelarModal">
+                <button
+                    type="button"
+                    class="btn-cancelar"
+                    id="cancelarModal"
+                >
                     CANCELAR
                 </button>
 
@@ -334,7 +396,7 @@
 
 </div>
 
-    <script src="../js/productos.js"></script>
+    <script src="js/productos.js"></script>
 
 </body>
 

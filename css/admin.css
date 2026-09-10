@@ -684,3 +684,30 @@ body {
     justify-content: flex-start;
     margin-top: 35px;
 }
+
+/* VALIDACIONES */
+
+.mensaje-error {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #d93025;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+.campo-error {
+    border-color: #d93025 !important;
+}
+
+.campo-error:focus {
+    border-color: #d93025 !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(217, 48, 37, 0.12);
+}

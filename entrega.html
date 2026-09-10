@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Entrega y pago | El Bajón del Gorila</title>
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/checkout.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link
+        rel="stylesheet"
+        href="css/checkout.css"
+    >
 
     <link
         rel="stylesheet"
@@ -23,30 +26,90 @@
 <body>
 
 
-    
+
     <!-- HEADER -->
-  <header class="header-checkout">
-    <a class="logo-checkout" href="../index.html" aria-label="Ir al inicio">
-      <img src="../img/logo-bajon-2.png" alt="El Bajón del Gorila">
-    </a>
+    <header class="header-checkout">
 
-    <nav class="navbar-checkout" aria-label="Navegación principal">
-      <a href="../index.html">Inicio</a>
-      <a href="../menu.html">Menú</a>
-      <a href="../promociones.html">Promociones</a>
-      <a href="#">Quiénes Somos</a>
-      <a href="#">Contacto</a>
-    </nav>
+        <div class="logo-checkout">
 
-    <div class="acciones-header">
-      <a href="#" class="icono-header" aria-label="Mi cuenta"><i class="bi bi-person"></i></a>
-      <a href="../carrito/carrito.html" class="carrito-header" aria-label="Carrito">
-        <i class="bi bi-bag"></i>
-        <span class="contador-header" id="contadorHeader">0</span>
-      </a>
-      <a href="../menu.html" class="btn-pedir-header">PEDIR AHORA</a>
-    </div>
-  </header>
+            <img
+                src="img/logo-bajon-2.png"
+                alt="El Bajón del Gorila"
+            >
+
+        </div>
+
+
+        <nav class="navbar-checkout">
+
+            <a
+                href="index.html"
+            >
+                Inicio
+            </a>
+            <a
+                href="menu.html"
+            >
+                Menú
+            </a>
+            <a
+                href="promociones.html"
+            >
+                Promociones
+            </a>
+            <a
+                href="nosotros.html"
+            >
+                Quiénes Somos
+            </a>
+            <a
+                href="contacto.html"
+            >
+                Contacto
+            </a>
+
+        </nav>
+
+
+        <div class="acciones-header">
+
+            <a
+                href="#"
+                class="icono-header"
+                aria-label="Mi cuenta"
+            >
+                <i class="bi bi-person"></i>
+            </a>
+
+
+            <a
+                href="carrito.html"
+                class="carrito-header"
+                aria-label="Carrito"
+            >
+
+                <i class="bi bi-bag"></i>
+
+                <span
+                    class="contador-header"
+                    id="contadorHeader"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <a
+                href="menu.html"
+                class="btn-pedir-header"
+            >
+                PEDIR AHORA
+            </a>
+
+        </div>
+
+    </header>
 
 
 
@@ -113,7 +176,10 @@
             </h1>
 
 
-            <form id="formEntrega">
+            <form
+                id="formEntrega"
+                novalidate
+            >
 
 
                 <!-- NOMBRE Y APELLIDO -->
@@ -130,7 +196,7 @@
                             type="text"
                             id="nombreCliente"
                             placeholder="Juan"
-                            required
+
                         >
 
                     </div>
@@ -146,7 +212,7 @@
                             type="text"
                             id="apellidoCliente"
                             placeholder="González"
-                            required
+
                         >
 
                     </div>
@@ -168,8 +234,9 @@
                         <input
                             type="tel"
                             id="telefonoCliente"
+                            value="+569"
                             placeholder="+56 9 1234 5678"
-                            required
+
                         >
 
                     </div>
@@ -184,8 +251,8 @@
                         <input
                             type="email"
                             id="correoCliente"
-                            placeholder="juan@email.com"
-                            required
+                            placeholder="juan@gmail.com"
+
                         >
 
                     </div>
@@ -262,7 +329,7 @@
                         type="text"
                         id="direccionCliente"
                         placeholder="Ej: Av. Principal 123"
-                        required
+
                     >
 
                 </div>
@@ -281,7 +348,7 @@
 
                     <select
                         id="comunaCliente"
-                        required
+
                     >
 
                         <option value="">
@@ -492,37 +559,189 @@
 
 
     <!-- FOOTER -->
-  <footer class="footer-checkout">
-    <div class="footer-columnas">
-      <div class="footer-marca">
-        <img src="../img/logo-bajon.png" alt="El Bajón del Gorila">
-        <p>El local de fast food más bestial de Santiago. Hecho con pasión, ingredientes de verdad y el hambre de un gorila.</p>
-        <div class="redes-footer">
-          <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a>
+    <footer class="footer-checkout">
+
+        <div class="footer-columnas">
+
+
+            <div class="footer-marca">
+
+                <img
+                    src="img/logo-bajon-2.png"
+                    alt="El Bajón del Gorila"
+                >
+
+                <p>
+                    El local de fast food más bestial de Santiago.
+                    Hecho con pasión, ingredientes de verdad
+                    y el hambre de un gorila.
+                </p>
+
+
+                <div class="redes-footer">
+
+                    <a href="#">
+                        Instagram
+                    </a>
+
+                    <a href="#">
+                        TikTok
+                    </a>
+
+                    <a href="#">
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    MENÚ
+                </h3>
+
+                <a
+                    href="menu.html"
+                >
+                    Hamburguesas
+                </a>
+                <a
+                    href="menu.html"
+                >
+                    Completos
+                </a>
+                <a
+                    href="menu.html"
+                >
+                    Churrascos
+                </a>
+                <a
+                    href="menu.html"
+                >
+                    Papas Fritas
+                </a>
+                <a
+                    href="promociones.html"
+                >
+                    Combos
+                </a>
+                <a
+                    href="menu.html"
+                >
+                    Bebidas
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    LINKS
+                </h3>
+
+                <a
+                    href="index.html"
+                >
+                    Inicio
+                </a>
+                <a
+                    href="menu.html"
+                >
+                    Menú
+                </a>
+                <a
+                    href="promociones.html"
+                >
+                    Promociones
+                </a>
+                <a
+                    href="nosotros.html"
+                >
+                    Quiénes Somos
+                </a>
+                <a
+                    href="contacto.html"
+                >
+                    Contacto
+                </a>
+                <a
+                    href="#"
+                >
+                    Mi Cuenta
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h3>
+                    CONTACTO
+                </h3>
+
+                <p>
+                    Av. Providencia 1234, Santiago
+                </p>
+
+                <p>
+                    +56 9 8765 4321
+                </p>
+
+                <p>
+                    hola@elbajondelgorila.cl
+                </p>
+
+
+                <div class="horario-footer">
+
+                    <strong>
+                        Horario
+                    </strong>
+
+                    <p>
+                        Lun–Jue: 12:00 – 23:00
+                    </p>
+
+                    <p>
+                        Vie–Sáb: 12:00 – 01:00
+                    </p>
+
+                    <p>
+                        Dom: 13:00 – 22:00
+                    </p>
+
+                </div>
+
+            </div>
+
+
         </div>
-      </div>
-      <div>
-        <h3>MENÚ</h3>
-        <a href="../menu.html">Hamburguesas</a><a href="../menu.html">Completos</a><a href="../menu.html">Churrascos</a><a href="../menu.html">Papas Fritas</a><a href="../menu.html">Combos</a><a href="../menu.html">Bebidas</a>
-      </div>
-      <div>
-        <h3>LINKS</h3>
-        <a href="../index.html">Inicio</a><a href="../menu.html">Menú</a><a href="../promociones.html">Promociones</a><a href="#">Quiénes Somos</a><a href="#">Contacto</a><a href="#">Mi Cuenta</a>
-      </div>
-      <div>
-        <h3>CONTACTO</h3>
-        <p>Av. Providencia 1234, Santiago</p><p>+56 9 8765 4321</p><p>hola@elbajondelgorila.cl</p>
-        <div class="horario-footer"><strong>Horario</strong><p>Lun–Jue: 12:00 – 23:00</p><p>Vie–Sáb: 12:00 – 01:00</p><p>Dom: 13:00 – 22:00</p></div>
-      </div>
-    </div>
-    <div class="footer-inferior">
-      <span>© 2026 El Bajón del Gorila. Todos los derechos reservados.</span>
-      <span>Hecho con amor en Santiago, Chile</span>
-    </div>
-  </footer>
 
 
-    <script src="../js/entrega.js"></script>
+        <div class="footer-inferior">
+
+            <span>
+                © 2026 El Bajón del Gorila.
+                Todos los derechos reservados.
+            </span>
+
+            <span>
+                Hecho con amor en Santiago, Chile
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/entrega.js"></script>
 
 </body>
 

@@ -4,7 +4,7 @@ const carrito = [
         nombre: "Hamburguesa Gorila",
         precio: 8990,
         cantidad: 1,
-        imagen: "../img/gorila-burger.png"
+        imagen: "img/gorila-burger.png"
     }
 ];
 
@@ -33,7 +33,7 @@ function mostrarCarrito() {
     listaCarrito.innerHTML = "";
 
 
-    carrito.forEach(function(producto) {
+    carrito.forEach(function (producto) {
 
         listaCarrito.innerHTML += `
             <div class="producto-carrito">
@@ -102,7 +102,7 @@ function actualizarResumen() {
     let subtotalCarrito = 0;
 
 
-    carrito.forEach(function(producto) {
+    carrito.forEach(function (producto) {
 
         cantidadTotal += producto.cantidad;
 
@@ -138,7 +138,7 @@ function actualizarResumen() {
 function aumentarCantidad(id) {
 
     const producto =
-        carrito.find(function(producto) {
+        carrito.find(function (producto) {
 
             return producto.id === id;
 
@@ -158,7 +158,7 @@ function aumentarCantidad(id) {
 function disminuirCantidad(id) {
 
     const producto =
-        carrito.find(function(producto) {
+        carrito.find(function (producto) {
 
             return producto.id === id;
 
@@ -178,7 +178,7 @@ function disminuirCantidad(id) {
 function eliminarDelCarrito(id) {
 
     const posicion =
-        carrito.findIndex(function(producto) {
+        carrito.findIndex(function (producto) {
 
             return producto.id === id;
 
@@ -197,7 +197,7 @@ function eliminarDelCarrito(id) {
 
 btnConfirmarPedido.addEventListener(
     "click",
-    function() {
+    function () {
 
         if (carrito.length === 0) {
 

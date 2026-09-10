@@ -1,6 +1,9 @@
-const formularioAlertas = document.getElementById('formularioAlertas');
-const correoAlertas = document.getElementById('correoAlertas');
-const mensajeAlertas = document.getElementById('mensajeAlertas');
+const formularioAlertas =
+    document.getElementById('formularioAlertas');
+const correoAlertas =
+    document.getElementById('correoAlertas');
+const mensajeAlertas =
+    document.getElementById('mensajeAlertas');
 
 formularioAlertas.addEventListener('submit', function (evento) {
   evento.preventDefault();

@@ -37,7 +37,8 @@ const pedidos = [
 ];
 
 
-const listaPedidos = document.getElementById("listaPedidos");
+const listaPedidos =
+    document.getElementById("listaPedidos");
 
 const contadorPedidos =
     document.getElementById("contadorPedidos");
@@ -54,7 +55,7 @@ function mostrarPedidos(lista = pedidos) {
     listaPedidos.innerHTML = "";
 
 
-    lista.forEach(function(pedido) {
+    lista.forEach(function (pedido) {
 
         listaPedidos.innerHTML += `
             <tr>
@@ -147,10 +148,9 @@ function mostrarPedidos(lista = pedidos) {
 }
 
 
-
 function cambiarEstadoPedido(id, nuevoEstado) {
 
-    const pedido = pedidos.find(function(pedido) {
+    const pedido = pedidos.find(function (pedido) {
         return pedido.id === id;
     });
 
@@ -159,7 +159,6 @@ function cambiarEstadoPedido(id, nuevoEstado) {
         pedido.estado = nuevoEstado;
     }
 }
-
 
 
 function aplicarFiltrosPedidos() {
@@ -175,7 +174,7 @@ function aplicarFiltrosPedidos() {
 
 
     const pedidosFiltrados =
-        pedidos.filter(function(pedido) {
+        pedidos.filter(function (pedido) {
 
 
             const coincideCliente =
@@ -206,7 +205,6 @@ function aplicarFiltrosPedidos() {
 
     mostrarPedidos(pedidosFiltrados);
 }
-
 
 
 buscarPedido.addEventListener(

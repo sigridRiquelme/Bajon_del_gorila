@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Usuarios | El Bajón del Gorila</title>
+    <title>Pedidos | El Bajón del Gorila</title>
 
-    <link rel="stylesheet" href="../css/admin.css">
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
 </head>
 
 
@@ -23,7 +29,7 @@
             <div class="logo-admin">
 
                 <img
-                    src="../img/logo-bajon.png"
+                    src="img/logo-bajon.png"
                     alt="El Bajón del Gorila"
                 >
 
@@ -41,11 +47,14 @@
                     Productos
                 </a>
 
-                <a href="pedidos.html">
+                <a
+                    href="pedidos.html"
+                    class="active"
+                >
                     Pedidos
                 </a>
 
-                <a href="usuarios.html" class="active">
+                <a href="usuarios.html">
                     Usuarios
                 </a>
 
@@ -60,7 +69,10 @@
                     admin@gorila.cl
                 </span>
 
-                <a href="../index.html" class="volver-sitio">
+                <a
+                    href="index.html"
+                    class="volver-sitio"
+                >
                     Volver al sitio
                 </a>
 
@@ -79,10 +91,10 @@
 
                 <div>
 
-                    <h1>GESTION DE USUARIOS</h1>
+                    <h1>PEDIDOS</h1>
 
-                    <p id="contadorUsuarios">
-                        0 usuarios
+                    <p id="contadorPedidos">
+                        0 pedidos
                     </p>
 
                 </div>
@@ -96,23 +108,35 @@
 
                 <input
                     type="text"
-                    id="buscarUsuario"
-                    placeholder="Buscar por nombre o correo..."
+                    id="buscarPedido"
+                    placeholder="Buscar por cliente o número de pedido..."
                 >
 
 
-                <select id="filtroRol">
+                <select id="filtroEstadoPedido">
 
                     <option value="todos">
-                        Todos los roles
+                        Todos los pedidos
                     </option>
 
-                    <option value="cliente">
-                        Cliente
+                    <option value="pendiente">
+                        Pendiente
                     </option>
 
-                    <option value="administrador">
-                        Administrador
+                    <option value="preparando">
+                        Preparando
+                    </option>
+
+                    <option value="listo">
+                        Listo
+                    </option>
+
+                    <option value="entregado">
+                        Entregado
+                    </option>
+
+                    <option value="cancelado">
+                        Cancelado
                     </option>
 
                 </select>
@@ -121,7 +145,7 @@
 
 
 
-            <!-- TABLA DE USUARIOS -->
+            <!-- TABLA DE PEDIDOS -->
             <section class="tabla-productos">
 
                 <table>
@@ -129,17 +153,18 @@
                     <thead>
 
                         <tr>
-                            <th>NOMBRE</th>
-                            <th>CORREO</th>
-                            <th>ROL</th>
+                            <th>PEDIDO</th>
+                            <th>CLIENTE</th>
+                            <th>FECHA</th>
+                            <th>PRODUCTOS</th>
+                            <th>TOTAL</th>
                             <th>ESTADO</th>
-                            <th>ACCIONES</th>
                         </tr>
 
                     </thead>
 
 
-                    <tbody id="listaUsuarios">
+                    <tbody id="listaPedidos">
 
                     </tbody>
 
@@ -153,7 +178,7 @@
     </div>
 
 
-    <script src="../js/usuarios.js"></script>
+    <script src="js/pedidos.js"></script>
 
 </body>
 

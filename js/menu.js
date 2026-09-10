@@ -1,11 +1,19 @@
-const buscador = document.getElementById('buscador');
-const selectorOrden = document.getElementById('selectorOrden');
-const botonesFiltro = document.querySelectorAll('.boton-filtro');
-const grillaProductos = document.getElementById('grillaProductos');
-const tarjetasProducto = Array.from(document.querySelectorAll('.tarjeta-producto'));
-const cantidadResultados = document.getElementById('cantidadResultados');
-const categoriaResultado = document.getElementById('categoriaResultado');
-const estadoVacio = document.getElementById('estadoVacio');
+const buscador =
+    document.getElementById('buscador');
+const selectorOrden =
+    document.getElementById('selectorOrden');
+const botonesFiltro =
+    document.querySelectorAll('.boton-filtro');
+const grillaProductos =
+    document.getElementById('grillaProductos');
+const tarjetasProducto =
+    Array.from(document.querySelectorAll('.tarjeta-producto'));
+const cantidadResultados =
+    document.getElementById('cantidadResultados');
+const categoriaResultado =
+    document.getElementById('categoriaResultado');
+const estadoVacio =
+    document.getElementById('estadoVacio');
 
 let categoriaActiva = 'Todos';
 
@@ -23,14 +31,19 @@ function actualizarMenu() {
     const categoria = tarjeta.dataset.categoria;
     const textoBuscable = normalizarTexto(tarjeta.textContent);
 
-    const coincideCategoria = categoriaActiva === 'Todos' || categoria === categoriaActiva;
+    const coincideCategoria =
+        categoriaActiva === 'Todos' ||
+        categoria === categoriaActiva;
     const coincideBusqueda = textoBuscable.includes(textoBusqueda);
 
     return coincideCategoria && coincideBusqueda;
   });
 
   tarjetasProducto.forEach(function (tarjeta) {
-    tarjeta.style.display = tarjetasVisibles.includes(tarjeta) ? 'flex' : 'none';
+    tarjeta.style.display =
+        tarjetasVisibles.includes(tarjeta)
+            ? 'flex'
+            : 'none';
   });
 
   const tipoOrden = selectorOrden.value;
@@ -57,7 +70,10 @@ function actualizarMenu() {
   });
 
   cantidadResultados.textContent = tarjetasVisibles.length;
-  categoriaResultado.textContent = categoriaActiva === 'Todos' ? '' : ' en ' + categoriaActiva;
+  categoriaResultado.textContent =
+      categoriaActiva === 'Todos'
+          ? ''
+          : ' en ' + categoriaActiva;
   estadoVacio.classList.toggle('mostrar', tarjetasVisibles.length === 0);
 }
 

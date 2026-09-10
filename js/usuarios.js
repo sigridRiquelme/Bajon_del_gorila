@@ -2,32 +2,36 @@ const usuarios = [
     {
         id: 1,
         nombre: "Juan Pérez",
-        correo: "juan@email.com",
+        correo: "juan@gmail.com",
         rol: "Cliente",
         estado: "Activo"
     },
     {
         id: 2,
         nombre: "Sigrid",
-        correo: "admin@gorila.cl",
+        correo: "admin@duoc.cl",
         rol: "Administrador",
         estado: "Activo"
     }
 ];
 
 
-const listaUsuarios = document.getElementById("listaUsuarios");
-const contadorUsuarios = document.getElementById("contadorUsuarios");
+const listaUsuarios =
+    document.getElementById("listaUsuarios");
+const contadorUsuarios =
+    document.getElementById("contadorUsuarios");
 
-const buscarUsuario = document.getElementById("buscarUsuario");
-const filtroRol = document.getElementById("filtroRol");
+const buscarUsuario =
+    document.getElementById("buscarUsuario");
+const filtroRol =
+    document.getElementById("filtroRol");
 
 
 function mostrarUsuarios(lista = usuarios) {
 
     listaUsuarios.innerHTML = "";
 
-    lista.forEach(function(usuario) {
+    lista.forEach(function (usuario) {
 
         listaUsuarios.innerHTML += `
             <tr>
@@ -106,7 +110,7 @@ function mostrarUsuarios(lista = usuarios) {
 
 function cambiarRol(id, nuevoRol) {
 
-    const usuario = usuarios.find(function(usuario) {
+    const usuario = usuarios.find(function (usuario) {
         return usuario.id === id;
     });
 
@@ -118,7 +122,7 @@ function cambiarRol(id, nuevoRol) {
 
 function cambiarEstadoUsuario(id, nuevoEstado) {
 
-    const usuario = usuarios.find(function(usuario) {
+    const usuario = usuarios.find(function (usuario) {
         return usuario.id === id;
     });
 
@@ -138,7 +142,7 @@ function eliminarUsuario(id) {
         return;
     }
 
-    const posicion = usuarios.findIndex(function(usuario) {
+    const posicion = usuarios.findIndex(function (usuario) {
         return usuario.id === id;
     });
 
@@ -160,7 +164,7 @@ function aplicarFiltrosUsuarios() {
         filtroRol.value;
 
 
-    const usuariosFiltrados = usuarios.filter(function(usuario) {
+    const usuariosFiltrados = usuarios.filter(function (usuario) {
 
         const coincideNombre =
             usuario.nombre
